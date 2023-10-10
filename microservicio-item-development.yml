@@ -1,0 +1,18 @@
+resilience4j:
+  circuitbreaker:
+    configs:
+      valorDefecto:
+        slidingWindowSize: 6
+        failureRateThreshold: 50
+        waitDurationInOpenState: 20s
+        permittedNumberOfCallsInHalfOpenState: 4
+    instances:
+      items:
+        baseConfig: valorDefecto
+  timelimiter:
+    configs:
+      valorDefecto:
+        timeoutDuration: 6s
+    instances:
+      items:
+        baseConfig: valorDefecto
